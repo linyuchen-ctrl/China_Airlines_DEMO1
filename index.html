@@ -15,7 +15,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
 
     <style>
         /* 基礎重置與變數 */
@@ -36,7 +36,8 @@
             background-color: #fff; 
         }
 
-        h1, h2, .section-title {
+        /* 移除原本套用到 .section-title 的明體設定 */
+        h1, h2 {
             font-family: 'Noto Serif TC', serif;
         }
 
@@ -59,23 +60,22 @@
             border-radius: 30px;
             font-weight: bold;
             font-size: 1.1rem;
-            /* 這裡原本是 opacity 0.3s，改為 all 0.3s ease 讓陰影跟位移也都有滑順的動畫 */
             transition: all 0.3s ease; 
-            /* 預設先給一個非常淺的基礎陰影，讓它原本就不會太平扁 */
             box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
         }
         .btn:hover { 
-        opacity: 0.85; /* 維持變淺的效果 */
-        scale: 102%;
-        /* 擴大陰影範圍，並加入一點紅色調的半透明陰影 (227, 54, 96 是 --accent-red 的 RGB) */
-        box-shadow: 0 5px 10px rgba(0,0,0,0.5); 
+            opacity: 0.85; 
+            scale: 102%;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.5); 
         }
 
+        /* 【修改區】將各區塊標題改為黑體，並縮小字級為 1.75rem */
         .section-title {
+            font-family: 'Noto Sans TC', sans-serif; 
             text-align: center;
             color: var(--primary-blue);
-            font-size: 2rem;
-            font-weight: bold;
+            font-size: 1.75rem; 
+            font-weight: 900; /* 加粗讓標題更有份量感 */
             margin-bottom: 2rem;
             position: relative;
         }
@@ -122,7 +122,6 @@
             margin-top: -20px;
         }
         
-        /* 手寫日期圖片的樣式 */
         .hero-date-img {
             max-height: 50px; 
             width: auto;
@@ -136,17 +135,29 @@
         .highlight-badge { background: #ffcc00; color: #333; padding: 2px 8px; border-radius: 4px; font-size: 1.2rem; }
 
         /* ================= 為什麼 2026 最值得去 ================= */
-        .why-2026 { padding: 50px 5%; background: #fff; }
+        .why-2026 { padding: 10px 5%; background: #fff; }
         .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .feature-card { text-align: left; padding: 20px; border-radius: 10px; background: #fff; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+        
+        /* 確保卡片有 position: relative 讓 NEW 標籤可以絕對定位 */
+        .feature-card { text-align: left; padding: 25px 20px 35px; border-radius: 10px; background: #fff; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.06); border: 1px solid #f0f4f8;}
         
         .feature-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
         .feature-icon { width: 50px; height: 50px; object-fit: contain; flex-shrink: 0; }
-        .feature-card h3 { color: var(--primary-blue); font-size: 1.3rem; margin: 0; line-height: 1.3; }
-        .feature-card p { color: var(--text-gray); font-size: 0.95rem; }
+        .feature-card h3 { color: var(--primary-blue); font-size: 1.3rem; margin: 0; line-height: 1.4; font-weight: 900;}
+        .feature-card p { color: var(--text-gray); font-size: 0.95rem; line-height: 1.6; font-weight: bold;}
+
+        /* 【修改區】新增 NEW 標籤圖片的絕對定位樣式 */
+        .new-badge {
+            position: absolute;
+            bottom: 10px; /* 往下沉，創造壓在邊界上的效果 */
+            right: 20px;   /* 靠右對齊 */
+            width: 65px;   /* 可依據實際圖檔大小微調 */
+            height: auto;
+            z-index: 5;
+        }
 
         /* ================= 必訪藝術島推薦 ================= */
-        .islands { padding: 50px 5%; background: #fff; }
+        .islands { padding: 10px 5%; background: #fff; }
         .islands-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .island-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
         .island-card .img-box { position: relative; }
@@ -157,7 +168,7 @@
         .island-card li::before { content: "•"; color: var(--primary-blue); margin-right: 8px; }
 
         /* ================= 高松三大好禮 ================= */
-        .gifts { padding: 50px 5%; background: #fff; }
+        .gifts { padding: 10px 5%; background: #fff; }
         .gifts-subtitle { text-align: center; color: var(--accent-red); font-weight: bold; margin-top: -20px; margin-bottom: 30px; }
         .gifts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .gift-card { border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
@@ -179,7 +190,7 @@
         .gift-card p { font-size: 0.9rem; color: var(--text-gray); }
 
         /* ================= 從高松出發最方便 (地圖區 + SVG 虛線) ================= */
-        .map-section { padding: 50px 5%; background: #fff; overflow: hidden; }
+        .map-section { padding: 10px 5%; background: #fff; overflow: hidden; }
         
         .map-wrapper {
             position: relative;
@@ -203,7 +214,6 @@
             z-index: 2;
         }
 
-        /* 絕對定位節點中心座標 (對應 SVG Path) */
         .node-center { top: 50%; left: 50%; }
         .node-tl { top: 25%; left: 18%; }
         .node-bl { top: 75%; left: 25%; }
@@ -224,7 +234,6 @@
             border-color: var(--primary-blue); 
         }
 
-        /* 地圖文字排版 */
         .text-info { position: absolute; white-space: nowrap; }
         .text-info h4 { color: var(--primary-blue); font-weight: bold; margin-bottom: 2px; font-size: 1.1rem; }
         .text-info h3 { margin: 0; font-size: 1.4rem; font-weight: bold; }
@@ -235,7 +244,7 @@
         .bottom-side { top: 100%; left: 50%; transform: translateX(-50%); margin-top: 15px; text-align: center; }
 
         /* ================= 推薦行程 ================= */
-        .itinerary { padding: 50px 5%; background: #fff; }
+        .itinerary { padding: 10px 5%; background: #fff; }
         .itinerary-grid { display: flex; justify-content: space-between; position: relative; gap: 20px; }
         
         .itinerary-step { 
@@ -300,7 +309,6 @@
         .faq {padding: 100px 5%; background: var(#fff); }
         .faq-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         
-        /* 卡片本身樣式：移除置中，讓內容自然靠左 */
         .faq-item { 
             display: flex; 
             flex-direction: column; 
@@ -311,11 +319,10 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
         }
 
-        /* 問題區域 (Q) 排版 */
         .faq-q { 
             display: flex; 
-            align-items: flex-start; /* 讓 Icon 和文字「齊上」對齊頂部 */
-            justify-content: flex-start; /* 靠左對齊 */
+            align-items: flex-start; 
+            justify-content: flex-start; 
             gap: 10px; 
             width: 100%;
         }
@@ -337,15 +344,14 @@
             margin: 0; 
             font-size: 1.05rem; 
             line-height: 1.4; 
-            padding-top: 4px; /* 微調高度，讓文字第一行與左邊的圓圈視覺齊平 */
-            text-align: left; /* 文字靠左對齊，換行才整齊 */
+            padding-top: 4px; 
+            text-align: left; 
         }
 
-        /* 答案區域 (A) 排版 */
         .faq-a { 
             display: flex; 
-            align-items: flex-start; /* 讓 Icon 和文字「齊上」對齊頂部 */
-            justify-content: flex-start; /* 靠左對齊 */
+            align-items: flex-start; 
+            justify-content: flex-start; 
             gap: 12px; 
             padding-top: 15px;
             border-top: 1px dashed #eee; 
@@ -356,7 +362,7 @@
             width: 24px; 
             height: auto; 
             flex-shrink: 0; 
-            margin-top: 2px; /* 微調圖片高度，與右邊文字第一行齊平 */
+            margin-top: 2px; 
             display: block;
         }
         .faq-a p { 
@@ -364,20 +370,20 @@
             color: var(--text-gray); 
             margin: 0; 
             line-height: 1.6; 
-            text-align: left; /* 文字靠左對齊 */
+            text-align: left; 
         }
 
-        /* FAQ RWD */
         @media (max-width: 1024px) {
             .faq-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 768px) {
             .faq-grid { grid-template-columns: 1fr; }
         }
+
         /* ================= Footer ================= */
         .footer { 
             background: url(img/footer_bg.png) center/cover no-repeat; 
-            padding: 50px 5%; 
+            padding: 10px 5%; 
             text-align: left; 
             position: relative; 
             min-height: 200px;
@@ -420,7 +426,6 @@
             }
             .itinerary-step .day-tag { position: relative; z-index: 4; } 
             
-            /* 【修改區】平板尺寸下，FAQ 改為 2 欄並排 */
             .faq-grid { grid-template-columns: repeat(2, 1fr); }
 
             .footer { text-align: center; }
@@ -428,7 +433,6 @@
             .footer .btn { position: static; display: inline-block; margin-top: 20px; }
         }
 
-        /* 小於 768px 時，地圖區塊改為單純的垂直排列，隱藏 SVG */
         @media (max-width: 768px) {
             .map-wrapper { 
                 padding-top: 0; 
@@ -441,7 +445,6 @@
             .map-node { position: static; transform: none; }
             .text-info { position: static; transform: none; margin: 10px 0 0 0 !important; text-align: center !important; }
             
-            /* 【修改區】手機尺寸下，FAQ 改回 1 欄排列 */
             .faq-grid { grid-template-columns: 1fr; }
         }
 
@@ -483,6 +486,7 @@
                     <h3>藝術祭<span style="color:var(--accent-red);">首度</span><br>展期外開放</h3>
                 </div>
                 <p>2026年起，豐島、女木島、男木島、小豆島、大島等地的室內作品將於指定日期定期開放。</p>
+                <img src="img/new_badge.png" alt="NEW!" class="new-badge">
             </div>
             
             <div class="feature-card">
@@ -499,6 +503,7 @@
                     <h3>共通票券<br>更方便</h3>
                 </div>
                 <p>女木島、男木島、小豆島、大島推出區域共通票券，一次探索多件作品。</p>
+                <img src="img/new_badge.png" alt="NEW!" class="new-badge">
             </div>
         </div>
     </section>
