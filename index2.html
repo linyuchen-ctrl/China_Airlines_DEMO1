@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 瀨戶內藝術旅行 旅行新提案 - 中華航空直飛高松</title>
+    
+    <meta name="description" content="中華航空直飛高松，2026瀨戶內國際藝術祭旅行新提案！藝術祭不只展期能看，室內作品首度定期開放。提供直島、豐島、女木島、小豆島推薦行程與高松三大好禮。">
+    <meta name="keywords" content="2026瀨戶內國際藝術祭, 瀨戶內海, 高松, 直島, 豐島, 女木島, 小豆島, 中華航空, 日本旅遊, 藝術旅行">
+    
+    <meta name="geo.region" content="JP-37">
+    <meta name="geo.placename" content="Takamatsu">
+    <meta name="geo.position" content="34.340149;134.043444">
+    <meta name="ICBM" content="34.340149, 134.043444">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@600;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* 基礎重置與變數 */
+        :root {
+            --primary-blue: #042560;
+            --secondary-blue: #225199;
+            --accent-red: #E33660;
+            --bg-light: #f4f8fc;
+            --text-dark: #333;
+            --text-gray: #666;
+        }
+        * { letter-spacing: 1px; box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Noto Sans TC', sans-serif; 
+            color: var(--text-dark); 
+            line-height: 1.6; 
+            background-color: #fff; 
+        }
+
+        h1, h2, .section-title {
+            font-family: 'Noto Serif TC', serif;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        ul { list-style: none; }
+        a { text-decoration: none; }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent-red); /* #E33660 */
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            /* 這裡原本是 opacity 0.3s，改為 all 0.3s ease 讓陰影跟位移也都有滑順的動畫 */
+            transition: all 0.3s ease; 
+            /* 預設先給一個非常淺的基礎陰影，讓它原本就不會太平扁 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+        }
+        .btn:hover { 
+        opacity: 0.85; /* 維持變淺的效果 */
+        scale: 102%;
+        /* 擴大陰影範圍，並加入一點紅色調的半透明陰影 (227, 54, 96 是 --accent-red 的 RGB) */
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5); 
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-blue);
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .section-title::before, .section-title::after {
+            content: "";
+            display: inline-block;
+            width: 40px;
+            height: 2px;
+            background-color: #ccc;
+            vertical-align: middle;
+            margin: 0 15px;
+        }
+
+        /* ================= Header 首圖區塊 ================= */
+        .hero {
+            position: relative;
+            background: url(img/hero_bg_clean.png) center/contain no-repeat;
+            padding: 40px 5%;
+            min-height: 600px;
+        }
+        .hero-top-bar { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0px; }
+        
+        .ci-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+            padding: 0px 15px;
+            border-radius: 5px;
+        }
+        .ci-logo-image {
+            max-height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .flight-info-container { width: 180px; text-align: center; }
+        .flight-info-icon { width: 100%; }
+
+        .hero-content {
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: -20px;
+        }
+        
+        /* 手寫日期圖片的樣式 */
+        .hero-date-img {
+            max-height: 50px; 
+            width: auto;
+            display: block;
+            margin-bottom: 15px; 
+        }
+        
+        .hero-content h1 { font-size: 2.8rem; color: var(--primary-blue); line-height: 1.2; margin-bottom: 10px; font-weight: 900; }
+        .hero-content h2 { font-size: 1.5rem; color: var(--accent-red); margin-bottom: 15px; }
+        .hero-content p { font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; }
+        .highlight-badge { background: #ffcc00; color: #333; padding: 2px 8px; border-radius: 4px; font-size: 1.2rem; }
+
+        /* ================= 為什麼 2026 最值得去 ================= */
+        .why-2026 { padding: 50px 5%; background: #fff; }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .feature-card { text-align: left; padding: 20px; border-radius: 10px; background: #fff; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.1);}
+        
+        .feature-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .feature-icon { width: 50px; height: 50px; object-fit: contain; flex-shrink: 0; }
+        .feature-card h3 { color: var(--primary-blue); font-size: 1.3rem; margin: 0; line-height: 1.3; }
+        .feature-card p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* ================= 必訪藝術島推薦 ================= */
+        .islands { padding: 50px 5%; background: #fff; }
+        .islands-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        .island-card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .island-card .img-box { position: relative; }
+        .island-card .tag { position: absolute; top: 10px; left: 10px; background: var(--primary-blue); color: #fff; padding: 5px 15px; font-weight: bold; }
+        .island-card img { width: 100%; height: 200px; object-fit: cover; }
+        .island-card ul { padding: 20px; }
+        .island-card li { margin-bottom: 8px; font-weight: bold; color: var(--primary-blue); }
+        .island-card li::before { content: "•"; color: var(--primary-blue); margin-right: 8px; }
+
+        /* ================= 高松三大好禮 ================= */
+        .gifts { padding: 50px 5%; background: #fff; }
+        .gifts-subtitle { text-align: center; color: var(--accent-red); font-weight: bold; margin-top: -20px; margin-bottom: 30px; }
+        .gifts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .gift-card { border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .gift-card img { width: 100%; height: 300px; object-fit: cover; object-position: center bottom; }
+        .gift-card .num { position: absolute; top: 15px; left: 15px; background: var(--accent-red); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; font-weight: bold; z-index: 2;}
+        .gift-card.green .num { background: #2e7d32; }
+        .gift-card.blue .num { background: var(--primary-blue); }
+        .gift-card-content { 
+            padding: 20px; 
+            position: absolute; 
+            top: 0; 
+            left: 0;
+            z-index: 2; 
+            border-radius: 0 0 10px 10px; 
+            width: 100%; 
+            text-align: center; 
+        }
+        .gift-card h3 { color: var(--primary-blue); font-size: 1.2rem; margin-bottom: 5px; }
+        .gift-card p { font-size: 0.9rem; color: var(--text-gray); }
+
+        /* ================= 從高松出發最方便 (地圖區 + SVG 虛線) ================= */
+        .map-section { padding: 50px 5%; background: #fff; overflow: hidden; }
+        
+        .map-wrapper {
+            position: relative;
+            max-width: 1000px;
+            margin: 0px auto 0px;
+            width: 100%;
+            padding-top: 30%; 
+        }
+        
+        .map-svg {
+            position: absolute;
+            top: 0; left: 0; 
+            width: 100%; height: 100%;
+            z-index: 1;
+            pointer-events: none; 
+        }
+
+        .map-node { 
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        /* 絕對定位節點中心座標 (對應 SVG Path) */
+        .node-center { top: 50%; left: 50%; }
+        .node-tl { top: 25%; left: 18%; }
+        .node-bl { top: 75%; left: 25%; }
+        .node-tr { top: 25%; left: 82%; }
+        .node-br { top: 75%; left: 75%; }
+
+        .map-node img { 
+            border-radius: 50%; 
+            border: 4px solid #fff; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+            width: 110px; height: 110px; 
+            object-fit: cover; 
+            background: #fff;
+            display: block;
+        }
+        .map-node.node-center img { 
+            width: 160px; height: 160px; 
+            border-color: var(--primary-blue); 
+        }
+
+        /* 地圖文字排版 */
+        .text-info { position: absolute; white-space: nowrap; }
+        .text-info h4 { color: var(--primary-blue); font-weight: bold; margin-bottom: 2px; font-size: 1.1rem; }
+        .text-info h3 { margin: 0; font-size: 1.4rem; font-weight: bold; }
+        .text-info p { font-size: 0.85rem; color: var(--text-gray); margin: 0; }
+        
+        .left-side { right: 100%; top: 50%; transform: translateY(-50%); margin-right: 15px; text-align: right; }
+        .right-side { left: 100%; top: 50%; transform: translateY(-50%); margin-left: 15px; text-align: left; }
+        .bottom-side { top: 100%; left: 50%; transform: translateX(-50%); margin-top: 15px; text-align: center; }
+
+        /* ================= 推薦行程 ================= */
+        .itinerary { padding: 50px 5%; background: #fff; }
+        .itinerary-grid { display: flex; justify-content: space-between; position: relative; gap: 20px; }
+        
+        .itinerary-step { 
+            flex: 1; 
+            border-radius: 10px; 
+            padding-bottom: 0; 
+            text-align: center; 
+            overflow: hidden; 
+            position: relative; 
+            min-height: 320px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        }
+        
+        .itinerary-step img { 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center bottom; 
+            z-index: 1; 
+            top: auto; 
+        }
+        
+        .itinerary-step .day-tag { 
+            display: inline-block; 
+            background: var(--primary-blue); 
+            color: #fff; 
+            padding: 4px 15px; 
+            border-radius: 0 0 10px 10px; 
+            font-weight: bold; 
+            margin-bottom: 0; 
+            z-index: 3; 
+            position: relative;
+        }
+        .itinerary-step.d2 .day-tag { background: #388e3c; }
+        .itinerary-step.d3 .day-tag { background: #f57c00; }
+        .itinerary-step.d4 .day-tag { background: #7b1fa2; }
+        
+        .step-content { 
+            position: absolute; 
+            top:10%;
+            width: 100%; 
+            z-index: 2; 
+            padding: 20px; 
+            border-radius: 0 0 10px 10px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: flex-start; 
+            background: rgba(255, 255, 255, 0.85); 
+            align-items: center; 
+            text-align: center; 
+        }
+
+        .itinerary-step h3 { font-size: 1.3rem; margin-bottom: 10px; }
+        .itinerary-step ul { text-align: center; padding: 0; margin-bottom: 15px; }
+        .itinerary-step li { font-size: 0.9rem; margin-bottom: 5px; list-style: none; } 
+        .itinerary-step li::before { display: none; }
+
+        /* ================= FAQ ================= */
+        .faq {padding: 100px 5%; background: var(#fff); }
+        .faq-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        
+        /* 卡片本身樣式：移除置中，讓內容自然靠左 */
+        .faq-item { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            background: #fff; 
+            padding: 25px 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); 
+        }
+
+        /* 問題區域 (Q) 排版 */
+        .faq-q { 
+            display: flex; 
+            align-items: flex-start; /* 讓 Icon 和文字「齊上」對齊頂部 */
+            justify-content: flex-start; /* 靠左對齊 */
+            gap: 10px; 
+            width: 100%;
+        }
+        .faq-q .q-icon { 
+            background: var(--primary-blue); 
+            color: #fff; 
+            width: 32px; 
+            height: 32px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-weight: bold; 
+            font-size: 1rem; 
+            flex-shrink: 0; 
+        }
+        .faq-q h4 { 
+            color: var(--primary-blue); 
+            margin: 0; 
+            font-size: 1.05rem; 
+            line-height: 1.4; 
+            padding-top: 4px; /* 微調高度，讓文字第一行與左邊的圓圈視覺齊平 */
+            text-align: left; /* 文字靠左對齊，換行才整齊 */
+        }
+
+        /* 答案區域 (A) 排版 */
+        .faq-a { 
+            display: flex; 
+            align-items: flex-start; /* 讓 Icon 和文字「齊上」對齊頂部 */
+            justify-content: flex-start; /* 靠左對齊 */
+            gap: 12px; 
+            padding-top: 15px;
+            border-top: 1px dashed #eee; 
+            width: 100%;
+        }
+        
+        .faq-a img.a-icon { 
+            width: 24px; 
+            height: auto; 
+            flex-shrink: 0; 
+            margin-top: 2px; /* 微調圖片高度，與右邊文字第一行齊平 */
+            display: block;
+        }
+        .faq-a p { 
+            font-size: 0.9rem; 
+            color: var(--text-gray); 
+            margin: 0; 
+            line-height: 1.6; 
+            text-align: left; /* 文字靠左對齊 */
+        }
+
+        /* FAQ RWD */
+        @media (max-width: 1024px) {
+            .faq-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+        /* ================= Footer ================= */
+        .footer { 
+            background: url(img/footer_bg.png) center/cover no-repeat; 
+            padding: 50px 5%; 
+            text-align: left; 
+            position: relative; 
+            min-height: 200px;
+            margin-top: 50px;
+        }
+        .footer-content { max-width: 600px; }
+        .footer-content h2 { font-size: 2rem; color: var(--primary-blue); margin-bottom: 20px; font-weight: 900; }
+        .footer-content p { color: var(--text-dark); margin-bottom: 20px; }
+        .footer .btn { position: absolute; right: 5%; bottom: 60px; }
+
+        /* ================= RWD 樣式 ================= */
+        @media (max-width: 1024px) {
+            .hero { min-height: auto; }
+            .hero-top-bar { flex-direction: column; align-items: center; text-align: center; }
+            .ci-logo-container { margin-bottom: 20px; } 
+            .flight-info-container { width: 100%; max-width: 300px; margin-bottom: 20px; }
+            .hero-content { max-width: 100%; margin-top: 20px; text-align: center; }
+            .hero-content h1 { font-size: 2rem; }
+
+            .features-grid { grid-template-columns: 1fr; }
+            .islands-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            .gifts-grid { grid-template-columns: 1fr; }
+            .gift-card img { height: 200px; }
+            .gift-card-content { position: relative; left: 0; width: 100%; border-radius: 0; background: transparent; padding: 60px 20px 20px; }
+            
+            .itinerary-grid { flex-direction: column; gap: 30px; }
+            .itinerary-step { min-height: 300px; } 
+            .itinerary-step ul { min-height: auto; }
+            
+            .step-content { 
+                position: relative; 
+                z-index: 2; 
+                width: 100%; 
+                background: rgba(255, 255, 255, 0.95); 
+                border-radius: 0; 
+                min-height: auto; 
+                padding: 60px 20px 20px; 
+                margin-top: -40px; 
+            }
+            .itinerary-step .day-tag { position: relative; z-index: 4; } 
+            
+            /* 【修改區】平板尺寸下，FAQ 改為 2 欄並排 */
+            .faq-grid { grid-template-columns: repeat(2, 1fr); }
+
+            .footer { text-align: center; }
+            .footer-content { margin: 0 auto; }
+            .footer .btn { position: static; display: inline-block; margin-top: 20px; }
+        }
+
+        /* 小於 768px 時，地圖區塊改為單純的垂直排列，隱藏 SVG */
+        @media (max-width: 768px) {
+            .map-wrapper { 
+                padding-top: 0; 
+                display: flex; 
+                flex-direction: column; 
+                gap: 40px; 
+                align-items: center; 
+            }
+            .map-svg { display: none; }
+            .map-node { position: static; transform: none; }
+            .text-info { position: static; transform: none; margin: 10px 0 0 0 !important; text-align: center !important; }
+            
+            /* 【修改區】手機尺寸下，FAQ 改回 1 欄排列 */
+            .faq-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 480px) {
+            .islands-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header class="hero">
+        <div class="hero-top-bar">
+            <div class="ci-logo-container">
+                <img src="img/memlogo-01.png" alt="CHINA AIRLINES 中華航空" class="ci-logo-image">
+            </div>
+        </div>
+        <div class="hero-content">
+            <img src="img/handwritten_2026.png" alt="2026" class="hero-date-img">
+            <h1 style="letter-spacing: 0.3rem;">瀨戶內<br>藝術旅行</h1>
+            <h2 style="letter-spacing: 0.3rem;">旅行新提案</h2>
+            <p>藝術祭不只展期能看！<br>
+               室內作品 <span class="highlight-badge">首度</span> 定期開放</p>
+            <p style="font-weight:normal; font-size:0.95rem; color:var(--text-gray);">
+                搭乘華航直飛高松<br>
+                輕鬆探索瀨戶內海藝術島嶼
+            </p>
+            <a href="#" class="btn">立即查看航班 →</a>
+        </div>
+    </header>
+
+    <section class="why-2026">
+        <h2 class="section-title">為什麼 2026 最值得去？</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-header">
+                    <img src="img/features_calendar.png" alt="藝術祭首度" class="feature-icon">
+                    <h3>藝術祭<span style="color:var(--accent-red);">首度</span><br>展期外開放</h3>
+                </div>
+                <p>2026年起，豐島、女木島、男木島、小豆島、大島等地的室內作品將於指定日期定期開放。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                     <img src="img/features_camera.png" alt="更多作品看得到" class="feature-icon">
+                    <h3>更多作品<br>看得到</h3>
+                </div>
+                <p>過去只能在藝術祭期間欣賞，現在全年有更多機會遊訪藝術島嶼。</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-header">
+                    <img src="img/features_ticket.png" alt="共通票券更方便" class="feature-icon">
+                    <h3>共通票券<br>更方便</h3>
+                </div>
+                <p>女木島、男木島、小豆島、大島推出區域共通票券，一次探索多件作品。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="islands">
+        <h2 class="section-title">必訪藝術島推薦</h2>
+        <div class="islands-grid">
+            <div class="island-card">
+                <div class="img-box">
+                    <div class="tag">直島</div>
+                    <img src="img/island-yellow_pumpkin.png" alt="直島黃南瓜">
+                </div>
+                <ul><li>黃南瓜</li><li>地中美術館</li></ul>
+            </div>
+            <div class="island-card">
+                <div class="img-box">
+                    <div class="tag">豐島</div>
+                    <img src="img/island-museum.png" alt="豐島美術館">
+                </div>
+                <ul><li>豐島美術館</li><li>線的記憶</li></ul>
+            </div>
+            <div class="island-card">
+                <div class="img-box">
+                    <div class="tag">女木島</div>
+                    <img src="img/island-red_pumpkin.png" alt="女木島作品">
+                </div>
+                <ul><li>Leandro Erlich</li><li>Nicolas Darrot</li></ul>
+            </div>
+            <div class="island-card">
+                <div class="img-box">
+                    <div class="tag">小豆島</div>
+                    <img src="img/island- windmill.png" alt="小豆島風車">
+                </div>
+                <ul><li>天使之路</li><li>橄欖公園</li><li>藝術作品巡禮</li></ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="gifts">
+        <h2 class="section-title">高松三大好禮</h2>
+        <p class="gifts-subtitle">數量有限，送完為止！ 🎁</p>
+        <div class="gifts-grid">
+            <div class="gift-card">
+                <div class="num">01</div>
+                <img src="img/gift_bus.png" alt="機場巴士">
+                <div class="gift-card-content">
+                    <h3>機場巴士<br>來回乘車券</h3>
+                    <p>輕鬆往返高松機場與市區</p>
+                </div>
+            </div>
+            <div class="gift-card green">
+                <div class="num">02</div>
+                <img src="img/gift_park.png" alt="栗林公園">
+                <div class="gift-card-content">
+                    <h3>栗林公園<br>免費入場券</h3>
+                    <p>日本三大名園之一</p>
+                    <p>感受四季之美</p>
+                </div>
+            </div>
+            <div class="gift-card blue">
+                <div class="num">03</div>
+                <img src="img/gift_boat.png" alt="小豆島船票">
+                <div class="gift-card-content">
+                    <h3>小豆島免費<br>來回船票</h3>
+                    <p>高松港 ↔ 小豆島</p>
+                    <p>來回船票免費</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="map-section">
+        <h2 class="section-title" style="border:none; margin-bottom: 0;">從高松出發最方便！</h2>
+        
+        <div class="map-wrapper">
+            <svg class="map-svg" viewBox="0 0 1000 400" preserveAspectRatio="none">
+                <path d="M 500,200 C 350,200 300,100 180,100" stroke="#8cb4d6" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+                <path d="M 500,200 C 400,200 350,300 250,300" stroke="#8cb4d6" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+                <path d="M 500,200 C 650,200 700,100 820,100" stroke="#8cb4d6" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+                <path d="M 500,200 C 600,200 650,300 750,300" stroke="#8cb4d6" stroke-width="2" stroke-dasharray="6,6" fill="none" />
+            </svg>
+
+            <div class="map-node node-tl">
+                <div class="text-info left-side">
+                    <h4>直島</h4><p>約50分鐘</p>
+                </div>
+                <img src="img/map_naoshima.png" alt="直島">
+            </div>
+            
+            <div class="map-node node-bl">
+                <div class="text-info left-side">
+                    <h4>豐島</h4><p>約35分鐘</p>
+                </div>
+                <img src="img/map_teshima.png" alt="豐島">
+            </div>
+            
+            <div class="map-node node-center">
+                <img src="img/map_takamatsu.png" alt="高松港">
+                <div class="text-info bottom-side">
+                    <h3 style="color:var(--primary-blue);">高松港</h3>
+                </div>
+            </div>
+            
+            <div class="map-node node-tr">
+                <div class="text-info right-side">
+                    <h4>女木島</h4><p>約20分鐘</p>
+                </div>
+                <img src="img/map_megijima.png" alt="女木島">
+            </div>
+            
+            <div class="map-node node-br">
+                <div class="text-info right-side">
+                    <h4>小豆島</h4><p>約60分鐘</p>
+                </div>
+                <img src="img/map_shodoshima.png" alt="小豆島">
+            </div>
+        </div>
+    </section>
+
+    <section class="itinerary">
+        <h2 class="section-title">推薦行程 <span style="font-weight:normal; font-size:1.5rem; color:var(--text-gray);">| 4天3夜 藝術慢旅！</span></h2>
+        <div class="itinerary-grid">
+            <div class="itinerary-step">
+                <img src="img/day1.png" alt="高松市區">
+                <div class="day-tag">DAY 1</div>
+                <div class="step-content">
+                    <h3 style="color:var(--primary-blue);">高松市區</h3>
+                    <ul>
+                        <li>栗林公園</li>
+                        <li>北濱Alley</li>
+                        <li>高松商店街</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="itinerary-step d2">
+                <img src="img/day2.png" alt="直島">
+                <div class="day-tag">DAY 2</div>
+                <div class="step-content">
+                    <h3 style="color:#388e3c;">直島</h3>
+                    <ul>
+                        <li>黃南瓜</li>
+                        <li>地中美術館</li>
+                        <li>本浦港散策</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="itinerary-step d3">
+                <img src="img/day3.png" alt="豐島女木島">
+                <div class="day-tag">DAY 3</div>
+                <div class="step-content">
+                    <h3 style="color:#f57c00;">豐島 + 女木島</h3>
+                    <ul>
+                        <li>豐島美術館</li>
+                        <li>線的記憶</li>
+                        <li>女木島藝術巡禮</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="itinerary-step d4">
+                <img src="img/day4.png" alt="小豆島">
+                <div class="day-tag">DAY 4</div>
+                <div class="step-content">
+                    <h3 style="color:#7b1fa2;">小豆島</h3>
+                    <ul>
+                        <li>天使之路</li>
+                        <li>橄欖公園</li>
+                        <li>寒霞溪</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2 class="section-title">常見問題 FAQ</h2>
+        <div class="faq-grid">
+            
+            <div class="faq-item">
+                <div class="faq-q">
+                    <div class="q-icon">Q1</div>
+                    <h4>沒有藝術祭期間也可以看作品嗎？</h4>
+                </div>
+                <div class="faq-a">
+                    <img src="img/aicon_Q1.png" alt="A" class="a-icon">
+                    <p>可以！部分室內作品將定期開放。2026年起更多機會造訪藝術島。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <div class="q-icon">Q2</div>
+                    <h4>高松適合自由行嗎？</h4>
+                </div>
+                <div class="faq-a">
+                    <img src="img/aicon_Q2.png" alt="A" class="a-icon">
+                    <p>非常適合！交通便利，跳島方式多元，行程彈性高，適合自由行旅客。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <div class="q-icon">Q3</div>
+                    <h4>三大好禮如何領取？</h4>
+                </div>
+                <div class="faq-a">
+                    <img src="img/aicon_Q3.png" alt="A" class="a-icon">
+                    <p>依活動辦法於指定地點領取，兌換詳情請參考官網活動頁面。</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">
+                    <div class="q-icon">Q4</div>
+                    <h4>建議安排幾天比較好？</h4>
+                </div>
+                <div class="faq-a">
+                    <img src="img/aicon_Q4.png" alt="A" class="a-icon">
+                    <p>建議安排 4 天 3 夜～5 天 4 夜，可深度體驗藝術島嶼與海景美食！</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h2>從高松開始，<br>你的瀨戶內藝術旅行</h2>
+            <p>華航直飛高松，<br>探索藝術、島嶼與海景的慢旅行</p>
+        </div>
+        <a href="#" class="btn">立即預訂華航 TPE → TAK 航班 →</a>
+    </footer>
+
+</div>
+
+</body>
+</html>
